@@ -1,28 +1,23 @@
-import logo from "./logo.svg";
-import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import Cart from "./pages/Cart";
-import Navbar from "./components/Navbar";
-import { Provider } from "react-redux";
-import store from "./store/store";
-import Footer from "./components/Footer";
+import { Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Pagenotfound from "./pages/Pagenotfound";
+import Register from "./pages/Auth/Register";
 
 function App() {
   return (
-    <div className="App">
-      <Provider store={store}>
-        <BrowserRouter>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="/cart" element={<Cart />}></Route>
-          </Routes>
-          <Footer />
-        </BrowserRouter>
-      </Provider>
-    </div>
-  );
+    <>
+    <Routes>
+      <Route path="/" element={<HomePage/>} />
+      <Route path="/about" element={<About/>} />
+      <Route path="/contact" element={<Contact/>} />
+      <Route path='/register' element={<Register/>}/>
+      <Route path='*' element={<Pagenotfound/>}/>
+    </Routes>
+    
+    </>
+  )
 }
 
 export default App;
