@@ -12,6 +12,7 @@ export const registerController = async (req, res) => {
     if (!email) {
       return res.send({ message: "Email is required" });
     }
+    
     if (!phone) {
       return res.send({ message: "Phone no is required" });
     }
@@ -27,7 +28,7 @@ export const registerController = async (req, res) => {
 
     if (existinguser) {
       return res.status(200).send({
-        success: true,
+        success: false,
         message: "Email already exist please login",
       });
     }

@@ -15,8 +15,9 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("/api/v1/auth/register",
-       {
+     
+      // `${process.env.REACT_APP_API}`
+      const res = await axios.post(`${process.env.REACT_APP_API}/api/v1/auth/register`, {
         name,
         email,
         password,
@@ -47,7 +48,7 @@ function Register() {
               value={name}
               onChange={(e) => setName(e.target.value)}
               className="form-control"
-              // id="exampleInputEmail1"
+            
               required
               placeholder="Enter your name"
             />
@@ -58,7 +59,7 @@ function Register() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="form-control"
-              // id="exampleInputEmail1"
+             
               required
               placeholder="email"
             />
@@ -70,7 +71,7 @@ function Register() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="form-control"
-              // id="exampleInputPassword1"
+            
               required
               placeholder="password"
             />
@@ -82,7 +83,7 @@ function Register() {
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               className="form-control"
-              // id="exampleInputEmail1"
+             
               required
               placeholder="phone"
             />
@@ -93,7 +94,7 @@ function Register() {
               value={address}
               onChange={(e) => setAddress(e.target.value)}
               className="form-control"
-              // id="exampleInputEmail1"
+             
               required
               placeholder="address"
             />
